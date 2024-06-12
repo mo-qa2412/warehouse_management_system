@@ -1,0 +1,106 @@
+{% extends 'super_admin_master.html' %}
+{% load static%}
+{% block title %}
+Home Page
+{% endblock %}
+
+    {% block content %}       
+<style>
+  table
+  {
+    
+              width: 90%;
+              border-collapse: collapse;
+              text-align: center;
+              font-size: 1.5rem;
+              border-color: black;
+              padding: 0;
+              margin: 0;
+          
+
+  }
+  .container3{
+    width: 350%;
+              border-collapse: collapse;
+              text-align: center;
+              font-size: 1.5rem;
+              border-color: black;
+              padding: -30px;
+              margin: 0;
+  }
+</style>
+  <section class="min-vh-100 d-flex bg-primary align-items-center">
+    <div class="container3">
+      
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 justify-content-center">
+                <div class="card bg-primary shadow-soft border-light p-4">
+                    <div class="card-header text-center pb-0">
+  <center>
+    <p style="background-color: red;border-radius: 25cm; color: white;font-size: 2rem;">Maximum Number Of warehouses</p>
+
+<form method="post" action="/update_max_warehouses/">
+  <input style="border: 1; background-color: #e6e7ee; text-align: center;width: 200px;" type="number" name="new_max_warehouses" value="{{max_warehouses}}" min="0">
+  <button type="submit" style="border: 0;">Update</button>
+
+</form>    
+<h3>------------------</h3>
+<form method="post" action="/update_date/">
+  <input style="border: 1; background-color: #e6e7ee; text-align: center;width: 200px;" type="date" name="new_date" value="{{ date|date:'Y-m-d' }}">
+  <!-- <input type="text" name="" id="" value="{{date}}"> -->
+  <button type="submit" style="border: 0;">Update</button>
+
+</form> 
+<h3>------------------</h3>
+
+<h1 style="background-color: red;border-radius: 25cm; color: white;font-size: 2rem;">Account Info</h1>
+    <br>
+    
+       <table border="2">
+              <tr>
+                <!-- <th >ID</th> -->
+                <th>Admin Email</th>
+                <th>Employee Email</th>
+              
+              </tr>
+              
+              {% for x in myaccount %}
+              <tr>
+                <!-- <td>{{ x.id }}</td> -->
+                <td>{{ x.admin_email }}</td>
+                <td>{{ x.employee_email }}</td>
+                
+      
+              </tr>
+              {% endfor %}
+            </table>
+          </center> 
+          
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+    <!-- Core -->
+<script src="../../vendor/jquery/dist/jquery.min.js"></script>
+<script src="../../vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../vendor/headroom.js/dist/headroom.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="../../vendor/nouislider/distribute/nouislider.min.js"></script>
+<script src="../../vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="../../vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="../../vendor/jquery.counterup/jquery.counterup.min.js"></script>
+<script src="../../vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="../../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="../../vendor/prismjs/prism.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Neumorphism JS -->
+<script src="../../assets/js/neumorphism.js"></script>
+{% endblock %}

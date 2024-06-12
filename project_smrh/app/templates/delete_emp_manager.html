@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Delete Employee</title>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<!-- <title>Store</title> -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Neumorphism UI">
+<meta name="author" content="Themesberg">
+
+<link rel="canonical" href="https://themesberg.com/product/ui-kits/neumorphism-ui/" />
+
+<!--  Social tags -->
+<meta name="keywords" content="neumorphism, neumorphism ui, neomorphism, neomorphism ui, neomorphism css, neumorphism css, neumorph, neumorphic, design system, login, form, table, tables, card, cards, navbar, modal, icons, icons, map, chat, carousel, menu, datepicker, gallery, slider, date, social, dropdown, search, tab, nav, footer, date picker, forms, tabs, time, button, select, input, timeline, cart, about us, account, log in, blog, profile, portfolio, landing page, ecommerce, shop, landing, register, app, contact, one page, sign up, signup, store, bootstrap 4, bootstrap4, dashboard, bootstrap 4 dashboard, bootstrap 4 design, bootstrap 4 system, bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, themesberg, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit">
+<meta name="description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages.">
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="Neumorphism UI by Themesberg">
+<meta itemprop="description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages.">
+<meta itemprop="image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/neumorphism-ui/neumorphism-thumbnail.jpg">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="product">
+<meta name="twitter:site" content="@themesberg">
+<meta name="twitter:title" content="Neumorphism UI by Themesberg">
+<meta name="twitter:description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages.">
+<meta name="twitter:creator" content="@themesberg">
+<meta name="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/neumorphism-ui/neumorphism-thumbnail.jpg">
+
+<!-- Open Graph data -->
+<meta property="fb:app_id" content="214738555737136">
+<meta property="og:title" content="Neumorphism UI by Themesberg" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://demo.themesberg.com/neumorphism-ui/" />
+<meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/neumorphism-ui/neumorphism-thumbnail.jpg"/>
+<meta property="og:description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages." />
+<meta property="og:site_name" content="Themesberg" />
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="./assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="../static/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Pixel CSS -->
+<link type="text/css" href="../static/css/neumorphism.css" rel="stylesheet">
+
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+    </head>
+    <body> 
+        <header class="header-global">
+            <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-primary">
+                <div class="container position-relative">
+                 
+                    <div class="navbar-collapse collapse" id="navbar_global">
+                        <div class="navbar-collapse-header">
+                            <div class="row">
+                                <div class="col-6 collapse-brand">
+                                    <a href="./index.html" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
+                                        <img src="./assets/img/brand/dark.svg" alt="Themesberg logo">
+                                    </a>
+                                </div>
+                                <div class="col-6 collapse-close">
+                                    <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Employees</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><form action="/add_employee_manager/" method="post">
+                                        <input type="hidden" name="warehouse_name" value="{{ warehouse_id }}">
+                                        <input type="hidden" name="employee_code" value="{{ employee_code }}">
+                                    <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                                        <button class="dropdown-item" type="submit" >
+                                            Add Employee
+                                        </button>
+                                      </form></li>
+                                    <li>
+                                        <form action="/delete_employee_manager/" method="post">
+                                        <input type="hidden" name="warehouse_id" value="{{ warehouse_id }}">
+                                        <input type="hidden" name="employee_code" value="{{ employee_code }}">
+                                    <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                                        <button class="dropdown-item" type="submit">View Employee Info</button>
+                                        </form>
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a  class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Material</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                   
+                                     
+                                       
+                                            <ul class="list-style-none">
+                                                <li><form action="/taking_out_material_manager/" method="post">
+                                                    <input type="hidden" name="warehouse_id" value="{{ warehouse_id }}">
+                                                    <input type="hidden" name="employee_code" value="{{ employee_code }}">
+                                    <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                                                    <button class="dropdown-item" type="submit" >
+                                                      Taking Out Materaial
+                                                    </button>
+                                                </form></li>
+                                                <li><form action="/add_material_manager/" method="post">
+                                                    <input type="hidden" name="warehouse_id" value="{{ warehouse_id }}">
+                                                    <input type="hidden" name="employee_code" value="{{ employee_code }}">
+                                    <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                                                    <button class="dropdown-item" type="submit" >
+                                                      Entering Materaial
+                                                    </button>
+                                                  </form>
+                                                </li>
+
+                                            </ul>
+
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a  class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Bill</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <ul class="list-style-none">
+                                        <li><form action="/all_bills_manager/" method="post">
+                                            <input type="hidden" name="warehouse_id" value="{{ warehouse_id }}">
+                                            <input type="hidden" name="employee_code" value="{{ employee_code }}">
+                                    <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                                            <button class="dropdown-item" type="submit" >
+                                              View Bills
+                                            </button>
+                                        </form></li>
+                                    </ul>    
+                                </div> 
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Section</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <ul class="list-style-none">
+                                    <li><form action="/view_add_section_manager/" method="post">
+                                        <input type="hidden" name="warehouse_id" value="{{ warehouse_id }}">
+                                        <input type="hidden" name="employee_code" value="{{ employee_code }}">
+                                    <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                                        <button class="dropdown-item" type="submit">
+                                          Add Section
+                                        </button>
+                                    </form></li>
+                                       
+                                    </ul>     
+                                </div> 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center">
+                       
+                        
+                            <form action="/CCC/" method="post">
+                                <input type="hidden" name="warehouse_name" value="{{ warehouse_id }}"><button class="btn btn-primary" type="submit">
+                                    <input type="hidden" name="employee_code" value="{{ employee_code }}">
+                                    <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                                Home
+                              </button></form>
+                    </div>  
+                </div>
+            </nav>
+        </header>
+<br><br><br>            
+    <main>         
+  <section class="min-vh-100 d-flex bg-primary align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div >
+                <div >
+                    <div class="card-header text-center pb-0">
+               <center>
+                <div>
+                  <h1 style="background-color: red;border-radius: 25cm; color: white;"> Delete Employees</h1>
+               </div>
+              <br>
+              <style>table {
+                width: 80vw;
+                border-collapse: collapse;
+                text-align: center;
+                font-size: 1.5rem;
+                border-color: black;
+                
+              }
+              table tr:hover {
+                background-color: lightblue;
+              }
+             .aa:hover{background-color: rgb(82, 82, 123);}
+            </style>
+            <!-- <button class="button" type="reset">ddddd</button>  -->
+                 <table border="2">
+                        <tr>
+                          <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Name</th>
+                          <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Phone</th>
+                          <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Code</th>
+                          <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;"></th>
+                        </tr>
+                        
+                        {% for x in myemployee %}
+                        <tr>
+                          <td>{{ x.name }}</td>
+                          <td>{{ x.phone }}</td>
+                          <td onmouseover="this.textContent='{{ x.code }}'" onmouseleave="this.textContent='**************'" >**************</td>
+
+                          <!-- <td>{{ x.code }}</td> -->
+                          <form action="/delete_manager/" method="post">
+                            <input type="hidden" name="warehouse_id" value="{{ warehouse_id }}">
+                            <input type="hidden" name="employee_account_date" value="{{ employee_account_date }}">
+
+
+                            <input type="hidden" name="id_delete" value="{{ x.id }}">
+                            
+                          <td class="aa">
+                            <button class="button" type="submit" style="background-color: transparent; border-radius: 20cm;border-color: blue; margin-left: 10px;">❌Delete</button>
+                          </td>
+                        </form>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                    </center> 
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+          </section>
+        </main>
+                      
+                          
+                      
+                            
+                       
+                    
+                
+               
+                
+       
+
+
+
+
+
+
+    <!-- Core -->
+<script src="../../vendor/jquery/dist/jquery.min.js"></script>
+<script src="../../vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../vendor/headroom.js/dist/headroom.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="../../vendor/nouislider/distribute/nouislider.min.js"></script>
+<script src="../../vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="../../vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="../../vendor/jquery.counterup/jquery.counterup.min.js"></script>
+<script src="../../vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="../../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="../../vendor/prismjs/prism.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Neumorphism JS -->
+<script src="../../assets/js/neumorphism.js"></script>
+    </body></html>

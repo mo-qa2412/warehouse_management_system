@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- <title>{% block title %}{% endblock %}</title> -->
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+<!-- <title>Store</title> -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Neumorphism UI">
+<meta name="author" content="Themesberg">
+
+<link rel="canonical" href="https://themesberg.com/product/ui-kits/neumorphism-ui/" />
+
+<!--  Social tags -->
+<meta name="keywords" content="neumorphism, neumorphism ui, neomorphism, neomorphism ui, neomorphism css, neumorphism css, neumorph, neumorphic, design system, login, form, table, tables, card, cards, navbar, modal, icons, icons, map, chat, carousel, menu, datepicker, gallery, slider, date, social, dropdown, search, tab, nav, footer, date picker, forms, tabs, time, button, select, input, timeline, cart, about us, account, log in, blog, profile, portfolio, landing page, ecommerce, shop, landing, register, app, contact, one page, sign up, signup, store, bootstrap 4, bootstrap4, dashboard, bootstrap 4 dashboard, bootstrap 4 design, bootstrap 4 system, bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, themesberg, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit">
+<meta name="description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages.">
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="Neumorphism UI by Themesberg">
+<meta itemprop="description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages.">
+<meta itemprop="image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/neumorphism-ui/neumorphism-thumbnail.jpg">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="product">
+<meta name="twitter:site" content="@themesberg">
+<meta name="twitter:title" content="Neumorphism UI by Themesberg">
+<meta name="twitter:description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages.">
+<meta name="twitter:creator" content="@themesberg">
+<meta name="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/neumorphism-ui/neumorphism-thumbnail.jpg">
+
+<!-- Open Graph data -->
+<meta property="fb:app_id" content="214738555737136">
+<meta property="og:title" content="Neumorphism UI by Themesberg" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://demo.themesberg.com/neumorphism-ui/" />
+<meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/neumorphism-ui/neumorphism-thumbnail.jpg"/>
+<meta property="og:description" content="Start developing neumorphic web applications and pages using Neumorphism UI. It features over 100 individual components and 5 example pages." />
+<meta property="og:site_name" content="Themesberg" />
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="./assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Fontawesome -->
+<link type="text/css" href="../static/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+<!-- Pixel CSS -->
+<link type="text/css" href="../static/css/neumorphism.css" rel="stylesheet">
+
+<!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+    </head>
+    <body> 
+        <style>
+            #countdown {
+            font-size: 24px;
+            text-align: center;
+            margin: 50px;
+            /* background-color: red; */
+        }
+        </style>
+        <br>
+        <div id="countdown"></div>
+
+<script>
+    // const targetDate = new Date("2022-12-4 00:00:00");
+    const targetDate = new Date("{{ admin_account_date }}");
+    targetDate.setTime(targetDate.getTime() + 365);// هي مشان الوقت يلي بدو يبلش منو عد تنازلي انتبه هون لل سيت و ال غيت
+
+    const countdownElement = document.getElementById('countdown');
+    setInterval(updatedate, 1000);//هون استدعاء تابع اتلحديث كل ثانية (الف مللي ثانيي)
+    //مشان استدعي التابع كل فترة زمنية محددة
+    function updatedate() {
+        const now = new Date();
+        const timeDifference = targetDate - now;
+
+        if (timeDifference > 0) {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `Day${days} ${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+        } else {
+            countdownElement.innerHTML = "انتهت الوقت";
+        }
+    }
+
+    function formatTime(time) { //هي مشان اذا كان الرقم اقل من 10 يضيف 0 عاليسار متل 01 مثلا
+        return time < 10 ? `0${time}` : time;
+    }
+</script>
+
+        <header class="header-global">
+            <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-primary">
+                <div class="container position-relative">
+                 
+                    <div class="navbar-collapse collapse" id="navbar_global">
+                        <div class="navbar-collapse-header">
+                            <div class="row">
+                                <div class="col-6 collapse-brand">
+                                    <a href="./index.html" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
+                                        <img src="./assets/img/brand/dark.svg" alt="Themesberg logo">
+                                    </a>
+                                </div>
+                                <div class="col-6 collapse-close">
+                                    <a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Employees</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- <li><a class="dropdown-item" href="/add_employee/">Add Employee</a></li> -->
+                                    <li><form action="/add_employee/" method="post">
+                                        <input type="hidden" name="warehouse_name" value="{{ story_name.id }}">
+                                        <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                                        <button class="dropdown-item" type="submit" >
+                                            Add Employee
+                                        </button>
+                                      </form></li>
+                                    <li>
+                                        <form action="/delete_employee/" method="post">
+                                        <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                                        <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                                        <button class="dropdown-item" type="submit">View Employee Info</button>
+                                        </form>
+                                    </li>
+                                    <!-- <li>
+                                        <form action="/show_emp/" method="post">
+                                        <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                                        <button class="dropdown-item" type="submit">View Employee Info</button>
+                                        </form>
+                                    </li> -->
+                                
+                                
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Material</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                   
+                                     
+                                       
+                                            <ul class="list-style-none">
+                                                <li><form action="/taking_out_material/" method="post">
+                                                    <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                                        <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                                                    <button class="dropdown-item" type="submit" >
+                                                      Taking Out Materaial
+                                                    </button>
+                                                </form></li>
+                                                <li><form action="/add_material/" method="post">
+                                                    <input type="hidden" name="warehouse_id" value="{{ warehouse_name }}">
+                                        <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                                                    <button class="dropdown-item" type="submit" >
+                                                      Entering Materaial
+                                                    </button>
+                                                  </form>
+                                                </li>
+                                                
+                                                
+                                               
+                                            </ul>
+                                        
+                                       
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a  class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Bill</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <ul class="list-style-none">
+                                        <li><form action="/all_bills/" method="post">
+                                            <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                                        <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                                            <button class="dropdown-item" type="submit" >
+                                              View Bills
+                                            </button>
+                                        </form></li>
+                                    </ul>    
+                                </div> 
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link" data-toggle="dropdown" >
+                                    <span class="nav-link-inner-text">Section</span>
+                                    <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <ul class="list-style-none">
+                                    <li><form action="/view_add_section/" method="post">
+                                        <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                                        <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                                        <button class="dropdown-item" type="submit">
+                                          Add Section
+                                        </button>
+                                    </form></li>
+                                       
+                                    </ul>     
+                                </div> 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center">
+                    <!-- <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}"> -->
+                       
+                    <form action="/XX/" method="post">
+                        <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                        <button class="btn btn-primary" type="submit">
+                            View All Warehouse
+                      </button></form>
+                        <!-- <a href="/XX/" class="btn btn-primary"><i class="fas fa-book"></i> View All Warehouse</a>
+                        <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button> -->
+        
+                       
+                        <p>    ......</p>
+                            <form action="/CC/" method="post">
+                                <input type="hidden" name="warehouse_name" value="{{ story_name.id }}">
+                                <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+
+                                <button class="btn btn-primary" type="submit">
+                                Home
+                              </button></form>
+                    
+                  
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+       
+
+
+
+        <style>
+            table {
+              width: 80vw;
+              border-collapse: collapse;
+              text-align: center;
+              font-size: 1.5rem;
+              border-color: black;
+              padding: 0;
+              margin: 0;
+            }
+          
+            /* td {
+              padding: 0;
+              margin: 0;
+            } */
+          
+            tr:hover {
+              background-color: lightblue;
+            }
+          </style>
+    <!-- <style>table {
+        width: 80vw;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 1.5rem;
+        border-color: black;
+        
+      }
+      table tr:hover {
+        background-color: lightblue;
+      }
+    </style> -->
+    <main>
+
+        <!-- Hero -->
+        <section class="  bg-soft pb-5 overflow-hidden z-2">
+            <div class="container z-2">
+                <div >
+                    <div>
+                        <h1 style="background-color: red;border-color: blue; border-radius: 25cm; color: white; text-align: center;">Store Name: {{story_name.warehouse_name}}</h1>
+                 
+                    
+              
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div >
+                        <div >
+                            <div class="card-header text-center pb-0">
+          <center>
+            <h1 style="background-color: rgb(82, 82, 123);border-radius: 1cm; color: white;">All Material</h1>
+
+            <!-- <h1 style="background-color: rgb(82, 82, 123);border-radius: 1cm; color: white;">All Material</h1> -->
+            <br>
+            
+            <!-- <div style="width: 350px;height: 50px; background-color: rgb(82, 82, 123);align-items: center;border-radius: 25cm;margin-bottom: 5px;" >
+              <a href="/add_material/"> <button  style="font-size: 1.2rem; margin-top: 12px;background-color: red;border-color: blue; border-radius: 25cm; color: white; text-align: center; width: 150px;">Entering</button></a>
+              <a href="#">  <button  style="font-size: 1.2rem; margin-top: 12px;background-color: red;border-color: blue; border-radius: 25cm; color: white; text-align: center; width: 150px;">Taking</button>
+              </a>
+              <form action="" method="post">
+                <button type="submit" style="font-size: 1.2rem; margin-top: 12px;background-color: red;border-color: blue; border-radius: 25cm; color: white; text-align: center; width: 150px;">Entering</button>
+              </form>
+
+              <form action="/add_material/" method="post">
+                <button type="submit" style="font-size: 1.2rem; margin-top: 12px;background-color: red;border-color: blue; border-radius: 25cm; color: white; text-align: center; width: 150px;">Entering</button>
+              </form>
+          </div> -->
+               <table border="2">
+                      <!-- <tr> -->
+                        <!-- <th colspan="4">
+                              <div style=" background-color: rgb(82, 82, 123);align-items: center;border-radius: 25cm;margin-bottom: 5px;" >
+                                  <form action="/add_material/" method="post">
+                                    <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                                    <button type="submit" style="font-size: 1.2rem;margin-bottom: 12px; margin-top: 12px;background-color: red;border-color: blue; border-radius: 25cm; color: white; text-align: center; width: 250px;height: 50px;">
+                                      Entering Materaial
+                                    </button>
+                                  </form>
+                            </div>
+                        </th>
+                        <th colspan="4">
+                              <div style=" background-color: rgb(82, 82, 123);align-items: center;border-radius: 25cm;margin-bottom: 5px;" >
+                                  <form action="/taking_out_material/" method="post">
+                                      <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                                      <button type="submit" style="font-size: 1.2rem;margin-bottom: 12px; margin-top: 12px;background-color: red;border-color: blue; border-radius: 25cm; color: white; text-align: center; width: 250px;height: 50px;">
+                                        Taking Out Materaial
+                                      </button>
+                                  </form>
+                            </div>
+                        </th> -->
+                        <!-- <th colspan="8">
+
+                                <h1 style="background-color: rgb(82, 82, 123);border-radius: 1cm; color: white;">All Material</h1>
+                        </th>
+                      </tr> -->
+                      <tr>
+                        
+                        <!-- <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">ID</th> -->
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Materaial Name</th>
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Description</th>
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Shelf Number</th>
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Section Name</th>
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Count</th>
+                        <!-- <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Count Type</th> -->
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Date</th>
+                      </tr>
+
+                      {% if mymaterial %}
+
+                      {% for x in mymaterial %}
+                      <tr>
+                        <!-- <td>{{ x.id }}</td> -->
+                        <td>{{ x.material_name }}</td>
+                        <td>{{ x.description }}</td>
+                        <td>{{ x.shelf_number }}</td>
+                        <td>{{ x.section_id }}</td>
+                        <td>{{ x.count }}{{ x.count_type }}</td>
+                        <!-- <td>{{ x.count_type }}</td> -->
+                        <td>{{ x.date }}</td>
+              
+                      </tr>
+                      {% endfor %}
+                      {% else %}
+                      <th colspan="7" style="color: red;">Sorry the Warehouse is empty</th>
+                      {% endif %}
+                      
+                    </table>
+                    
+                  </center> 
+  <br><br>
+                <form method="POST">
+                    <input type="hidden" name="warehouse_name" value="{{ story_name.id }}">
+                    <input type="hidden" name="warehouse_id" value="{{ story_name.id }}">
+                    <input type="hidden" name="admin_account_date" value="{{ admin_account_date }}">
+                    
+                  <!-- <div class="form-group">
+                    <div class="input-group mb-4">
+                        <select style="border-color: blue;" id="countrySelect" name="search_field" class="form-control" required >
+                            <option  disabled selected>Search by?</option>
+                            <option value="material_name">Materaial Name</option>
+                            <option value="description">Description</option>
+                          </select> 
+                          <pre>  </pre>
+                        <input style="border-color: blue;" class="form-control" id="exampleInputIcon2" name="search_value" placeholder="Search for?" aria-label="Input group" type="text" >
+                        <div class="input-group-append">
+                           <button type="submit"><span class="input-group-text"><span class="fas fa-search" ></span></span>
+                            </button>
+
+                        </div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <div class="input-group mb-4">
+                            <select style="border-color: blue;" id="countrySelect" name="search_field" class="form-control" required>
+                                <option disabled selected>Search by?</option>
+                                <option value="material_name">Material Name</option>
+                                <option value="description">Description</option>
+                                <option value="date">Date</option>
+                            </select>
+                            <pre>  </pre>
+                            <div id="searchFor" style="display: block;width: 565px;">
+                                <input style="border-color: blue;" class="form-control" id="exampleInputIcon2" name="search_value" placeholder="Search for?" aria-label="Input group" type="text">
+                            </div>
+                            <div id="dateFields" style="display: none;width: 565px;">
+                                <input style="border-color: blue;" class="form-control"  name="from_date" placeholder="From Date" aria-label="From Date" type="date">
+                                <input style="border-color: blue;" class="form-control" name="to_date" placeholder="To Date" aria-label="To Date" type="date">
+                            </div>
+                            <div class="input-group-append">
+                                <button type="submit"><span class="input-group-text"><span class="fas fa-search"></span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        document.getElementById('countrySelect').addEventListener('change', function () {
+                            var searchFor = document.getElementById('searchFor');
+                            var dateFields = document.getElementById('dateFields');
+                            if (this.value === 'date') {
+                                // searchFor.style.width='565px';
+                                searchFor.style.display = 'none';
+                                dateFields.style.display = 'flex';
+                            } else {
+                                searchFor.style.display = 'block';
+                                dateFields.style.display = 'none';
+                            }
+                        });
+                    </script>
+                </form>
+                  
+
+                {% if filtered_materials %}
+                <table border="2">
+                    <tr>
+                        <!-- <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">ID</th> -->
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Materaial Name</th>
+                        
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Description</th>
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Shelf Number</th>
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Section Name</th>
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Count</th>
+                        <!-- <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Count Type</th> -->
+                        <th style="background-color: rgb(82, 82, 123);color: white; font-size: 1.60rem;">Date</th>
+                    </tr>
+                    {% for mat in filtered_materials %}
+                    <tr>
+                        <!-- <td>{{ mat.id }}</td> -->
+                        <td>{{ mat.material_name }}</td>
+                        
+                        <td>{{ mat.description }}</td>
+                        <td>{{ mat.shelf_number }}</td>
+                        <td>{{ mat.section_id }}</td>
+                        <td>{{ mat.count }}{{ mat.count_type }}</td>
+                        <!-- <td>{{ x.count_type }}</td> -->
+                        <td>{{ mat.date }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7">No Materaials found.</td>
+                    </tr>
+                    
+                    {% endfor %}
+                </table>
+                {% else %}
+                <p style="text-align: center; background-color: #F14B4B; color: white;"><h2 style="text-align: center; background-color: #F14B4B; color: white;">No matching Materaials found.</h2></p>
+                {% endif %}
+
+
+                </div>
+              </div>
+          </div>
+        </div>
+        </div>
+        </section></main>
+    <!-- Core -->
+<script src="./vendor/jquery/dist/jquery.min.js"></script>
+<script src="./vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./vendor/headroom.js/dist/headroom.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="./vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="./vendor/nouislider/distribute/nouislider.min.js"></script>
+<script src="./vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="./vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="./vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
+<script src="./vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="./vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="./vendor/prismjs/prism.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Neumorphism JS -->
+<script src="./assets/js/neumorphism.js"></script>
+</body>
+</html>

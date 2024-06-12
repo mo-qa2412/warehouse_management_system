@@ -1,0 +1,86 @@
+{% extends 'super_admin_master.html' %}
+{% load static%}
+{% block title %}
+Home Page
+{% endblock %}
+
+    {% block content %}   
+    <main>
+        <!-- Section -->
+        <section class="min-vh-100 d-flex bg-primary align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 justify-content-center">
+                        <div class="card bg-primary shadow-soft border-light p-4">
+                            <div class="card-header text-center pb-0">
+                                <h2 style="background-color: rgb(82, 82, 123);border-radius: 25cm; color: white;">Create Account</h2>                               
+                            </div>
+                            <div class="card-body">
+                                <form action='/create_account/', method="POST">
+                                    {% csrf_token %}
+                                    <!-- Form -->
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Admin_Email</label>
+                                        <div class="input-group">
+                                           
+                                            <input class="form-control" id="email" placeholder="admin_email" type="email" aria-label="email" required name="admin_email">
+                                        </div>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="form-group">
+                                        <!-- Form -->
+                                        <div class="form-group">
+                                            <label for="password">Employee_Email</label>
+                                            <div class="input-group">
+                                           
+                                                <input class="form-control" id="email" placeholder="employee_email" type="email" aria-label="email" required name="employee_email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Warehouses Count</label>
+                                            <div class="input-group">
+                                           
+                                                <!-- <input class="form-control"  placeholder="Maximum Count of Warehouses" type="number" aria-label="Maximum Count of Warehouses" required name="max_warehouses" min="0"> -->
+                                                <input class="form-control"  placeholder="Maximum Count of Warehouses" type="number" aria-label="Maximum Count of Warehouses" required name="max_warehouses" min="0">
+                                            </div>
+                                        </div>
+                                        <!-- End of Form -->
+                                        <!-- Form -->
+                                       
+                                        <!-- End of Form -->
+                                        
+                                    </div>
+                                    <button type="submit" class="btn btn-block btn-primary">Create Account</button>
+                                </form>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Core -->
+<script src="../../vendor/jquery/dist/jquery.min.js"></script>
+<script src="../../vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../vendor/headroom.js/dist/headroom.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="../../vendor/nouislider/distribute/nouislider.min.js"></script>
+<script src="../../vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="../../vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="../../vendor/jquery.counterup/jquery.counterup.min.js"></script>
+<script src="../../vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="../../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="../../vendor/prismjs/prism.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+<script src="../../assets/js/neumorphism.js"></script>
+{% endblock%}

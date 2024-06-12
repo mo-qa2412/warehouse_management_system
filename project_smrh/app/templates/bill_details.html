@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+ th, td {
+          border: 1px solid black;
+          border-radius: 10px;
+          padding: 10px;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 1.5rem;
+            border: 1px solid black;
+            margin: 50px auto;
+        }
+        th {
+            background-color: rgb(82, 82, 123);
+            color: white;
+            font-size: 1.6rem;
+        }
+        tr:hover {
+            background-color: lightblue;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+        .container {
+            border: 2px solid black;
+            width: 1020px;
+            height: 700px;
+            padding: 20px;
+            background-color: white;
+        }
+        h1, h2 {
+            text-align: center;
+        }    
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Details</title>
+</head>
+<body>
+    <div class="container">
+        {% if bill_finals %}
+            <h1>Bill Details</h1>
+            {% for c in bill_employee_code %} 
+
+            <!-- يلي خرج الفاتورة -->
+            <h2>Employee Code: {{ c.code }}</h2>
+            {% endfor %}
+            
+            <!-- يلي طبع الفاتورة -->
+            <!-- <h2>Print By:[{{employee_code}}]</h2> -->
+
+
+            <h2>Bill ID: {{ id_bill }}</h2>
+            <h2>Warehouse Name: {{ warehouse_id }}</h2>
+            {% for z in bill_date %} 
+
+            <h2>Bill Date: {{ z.date }}</h2>
+            {% endfor %}
+            <table>
+                <tr>
+                    <th style="width: 60%;">Material Name</th>
+                    <th>Count</th>
+                </tr>
+                {% for bill_final in bill_finals %} 
+                    <tr>
+                        <td>{{ bill_final.material_name }}</td>
+                        <td>{{ bill_final.count }}</td>     
+                    </tr>
+                {% endfor %}
+            </table>
+            <br>
+            <style>
+                .btn{
+                    background-color: rgb(82, 82, 123);
+                    border: 0;
+                    width: 100px;
+                    height: 50px;
+                    border-radius: 25cm;
+                    font-size: 1.6rem;
+                    color: white;
+                }
+                .btn:hover{
+                    background-color: red;
+                    border-radius: 25cm;
+                    color: white;
+                }
+            </style>
+            <div>
+                <form action="/generate_files/" method="post" class="no-print">
+                    {% csrf_token %}
+                    <input  type="hidden" name="warehouse_id" value="{{ warehouse_id }}">
+                    <input  type="hidden" name="employee_code" value="{{ employee_code }}">
+                    <input  type="hidden" name="id_bill" value="{{ id_bill }}">
+                    <button class="btn" type="submit">Print</button>
+                </form>
+                <br>
+            <form action="" method="get" class="no-print">
+    
+                <button class="btn" type="button" onclick="print2()">Print+p</button>
+            </form>
+        </div>
+        <script>
+            function print2() {
+                window.print();
+            }
+        </script>
+        {% endif %}
+    </div>
+</body>
+</html>
